@@ -1,0 +1,19 @@
+import re
+
+def validate_bangladesh_mobile_number(number):
+    # Regular expression pattern for a valid Bangladesh mobile number
+    # The pattern assumes that the number starts with 01 and is followed by 9 more digits.
+    pattern = r'^01[3-9]\d{8}$'
+    
+    # Use the re.match() function to check if the number matches the pattern
+    if re.match(pattern, number):
+        return True
+    else:
+        return False
+
+# Example usage:
+mobile_number = "01712345678"
+if validate_bangladesh_mobile_number(mobile_number):
+    print(f"{mobile_number} is a valid Bangladesh mobile number.")
+else:
+    print(f"{mobile_number} is not a valid Bangladesh mobile number.")
